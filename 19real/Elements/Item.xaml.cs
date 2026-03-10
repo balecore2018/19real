@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,21 @@ namespace _19real.Elements
     /// </summary>
     public partial class Item : UserControl
     {
-        public Item()
+        public Item(Classes.Item item)
         {
             InitializeComponent();
-        }
+
+            if (item != null)
+            {
+                if (File.Exists(Directory.GetCurrentDirectory() + "/Images/" + item.src))
+                    image.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory()
+                        + "/Images/" + item.src));
+                else image.Source = new BitmapImage(new Uri(System.IO.Directory.GetCurrentDirectory()
+                    + "/Images/null.jpg")); 
+
+                price.Content = item.price;
+                name.Content = item.name;
+            }
+        } 
     }
 }

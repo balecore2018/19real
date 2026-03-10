@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _19real.Classes
 {
-    internal class Item
+    public class Item
     {
         public string name {  get; set; }
         public int price { get; set; }

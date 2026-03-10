@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _19real.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace _19real
         public MainWindow()
         {
             InitializeComponent();
+
+            OpenPage(new Pages.Main());
+        }
+
+        private void OpenPage(Page page)
+        {
+            frame.Navigate(page);
         }
     }
 }

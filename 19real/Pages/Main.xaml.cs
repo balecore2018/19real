@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _19real.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,21 @@ namespace _19real.Pages
     /// </summary>
     public partial class Main : Page
     {
+        public List<Item> items = new List<Item>();
         public Main()
         {
             InitializeComponent();
+            items.Add(new Item("Шакаф", 20000, "shakaf.png"));
+            LoadItems();
+        }
+
+
+        public void LoadItems()
+        {
+            foreach (Item item in items)
+            {
+                parent.Children.Add(new Elements.Item(item));
+            }
         }
     }
 }
