@@ -26,6 +26,12 @@ namespace _19real.Pages
         {
             InitializeComponent();
             items.Add(new Item("Шакаф", 20000, "shakaf.png"));
+
+            items.Add(new Item("ВК", 6767, "vk.png"));
+            items.Add(new Item("ТГ", 999999, "telegramm.png"));
+            items.Add(new Item("Ничего", 20000, ""));
+            items.Add(new Item("Инстаграм", 676767, "instagram.png"));
+            items.Add(new Item("тоже ничего", 0, ""));
             LoadItems();
         }
 
